@@ -1,5 +1,5 @@
 
-
+<!-- 已修改为公众号实现 -->
 <form bindsubmit="formSubmit">
     <view class='fz14 ml10 mb10' wx:if='{{code}}'>扫描结果：快递单号 {{code}}</view>
 
