@@ -1,0 +1,61 @@
+
+<view class="colorF overH">
+ <open-data type="userAvatarUrl" class='headbg show posRel top0 left0'></open-data>
+ <view class='maskpop posAbs top0 left0'></view>
+ <view class='posAbs top0 left0 flex justc alic colu headBox'>
+    <open-data type="userAvatarUrl" class='head show overH'></open-data>
+    <open-data type="userNickName" lang="zh_CN" class='fz18 mt10'></open-data>
+    <view class='fz14 mt10'>吾虽浪迹天涯，却未迷失本心。</view>
+ </view>   
+</view>
+
+
+ <navigator url='translate'  class='flex alic lh40 fz14 mi bgf'>
+    <image src='../img/translate.png' class='lef mr10 ml10'></image>
+    <view class='flex alis alic borderbe0 flex1'>
+      <view>同声传译</view>
+      <image src='../img/right.png' class='rig posAbs'></image>
+    </view> 
+ </navigator>
+ <navigator url='qrCode'  class='flex alic lh40 fz14 mi bgf'>
+    <image src='../img/ai.png' class='lef mr10 ml10'></image>
+    <view class='flex alis alic borderbe0 flex1'>
+      <view>扫码（公司内部使用）</view>
+      <image src='../img/right.png' class='rig posAbs'></image>
+    </view> 
+ </navigator>
+ <navigator url='ai'  class='flex alic lh40 fz14 mi bgf'>
+    <image src='../img/ai.png' class='lef mr10 ml10'></image>
+    <view class='flex alis alic borderbe0 flex1'>
+      <view>传图识字（识物）</view>
+      <image src='../img/right.png' class='rig posAbs'></image>
+    </view> 
+ </navigator>
+  <navigator url='robot'  class='flex alic lh40 fz14 mi bgf'>
+    <image src='../img/robot.png' class='lef mr10 ml10'></image>
+    <view class='flex alis alic borderbe0 flex1'>
+      <view>萌萌哒小仙女</view>
+      <image src='../img/right.png' class='rig posAbs'></image>
+    </view> 
+ </navigator>
+ <button open-type='contact' send-message-title='哇！帅过吴亦凡哦？我要赞赏你' send-message-path='translate' send-message-img='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1185812597,1870217248&fm=11&gp=0.jpg' show-message-card='true' class='flex alic lh40 fz14 mi bgf'>
+    <image src='../img/call.png' class='lef mr10 ml10'></image>
+    <view class='flex alis alic borderbe0 flex1'>
+      <view>联系作者</view>
+      <image src='../img/right.png' class='rig posAbs'></image>
+    </view> 
+ </button>
+ <button open-type='feedback' class='flex alic lh40 fz14 mi bgf'>
+    <image src='../img/say.png' class='lef mr10 ml10'></image>
+    <view class='flex alis alic borderbe0 flex1'>
+      <view>我要提意见</view>
+      <image src='../img/right.png' class='rig posAbs'></image>
+    </view> 
+ </button>
+ <navigator url='support' class='flex alic lh40 fz14'>
+    <image src='../img/rmb.png' class='lef mr10 ml10'></image>
+    <view class='flex alis alic flex1'>
+      <view>我要赞赏</view>
+      <image src='../img/right.png' class='rig posAbs'></image>
+    </view> 
+ </navigator>

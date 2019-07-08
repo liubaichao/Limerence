@@ -1,0 +1,11 @@
+<image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530616031475&di=da8049a2da18c8ef6be825ad0f244e81&imgtype=0&src=http%3A%2F%2Fstatic.oneplus.cn%2Fdata%2Fattachment%2Fforum%2F201705%2F01%2F175211oymyrdrpvonxzfyc.png' mode='widthFix' class='img'></image>
+
+<view class='fz14 ml10 mt20'>A:你好！</view>
+<view class='fz14 ml10'>B:Hi！</view>
+<view class='fz14 ml10'>A:？！！！（我靠，外国友人，还好我英语1.5级）</view>
+<view class='fz14 ml10'>B:？！！！（我靠，外国友人，还好我汉语8级）</view>
+
+<view class='posAbs' style='width:100%;bottom:20rpx;'>
+  <view class='cue ml10 lh30 fz16 borRad pl10 pr10 mb20' bindtap='exchange'>{{txt}}</view>
+  <button type="primary" bindtouchstart="touchdown_plugin" bindtouchend="touchup_plugin" class='ml10 mr10 fz16'>{{text}}</button>
+</view>

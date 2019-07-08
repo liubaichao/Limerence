@@ -1,0 +1,4 @@
+.video{width:100%;}
+.img{width:100%;}
+.cat{width: 300rpx;height: 300rpx;}
+.head{width: 40rpx;height: 40rpx;border-radius: 50%;}

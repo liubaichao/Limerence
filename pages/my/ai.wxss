@@ -1,0 +1,10 @@
+.cue{
+  border:1px solid #1AAD19;width: max-content;color:#1AAD19;
+}
+.acitve{
+  background:#1AAD19;color:#fff;
+}
+.img{width: 100%;}
+.selectImg{border:1px solid #f0f;width: max-content;color:#f0f;}
+.content{width: calc(100% - 40rpx);border:1px solid #f0f;min-height: 400rpx;}
+.copy{background: #f0f}

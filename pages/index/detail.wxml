@@ -1,0 +1,17 @@
+ <!-- <video wx:if='{{list.videosrc}}' src='{{list.videosrc}}' binderror='no' objectFit='cover' autoplay='{{true}}' class='video'></video>  -->
+<view wx:if='{{list.videosrc}}' class='fz14 ml10 mr10 lh20'>sorry！由于我是个人开发者，关于视频我没有开发权限，所以我不得不删除了视频，敬请谅解</view> 
+<image wx:if='{{list.imgsrc}}' src='{{list.imgsrc}}' binderror='no' class='img' mode="widthFix"></image>   
+
+<view hidden='{{isHide}}' class='tc'>
+  <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528370290014&di=5ccd359f169d81a96c14ce8c42383e74&imgtype=0&src=http%3A%2F%2Ff.hiphotos.baidu.com%2Fzhidao%2Fwh%253D450%252C600%2Fsign%3Dc24357a01c4c510fae91ea1e5569091b%2F4b90f603738da9777c150f43b651f8198618e3a4.jpg' class='cat'></image>
+  <view>哎呀！您访问的内容被喵星人偷走了</view>
+</view>
+
+<view class='pl10 pr10' wx:if="{{list.content}}">
+  <view class='fz18'>神评论：</view>
+  <view class='fz16 indent2 pt5 pb5'>{{list.content}}</view>
+  <view class='flex justs alic fz12'>
+    <image src='{{list.head}}' class='head'></image>
+    <view>{{list.name}}</view>
+  </view>
+</view> 

@@ -1,0 +1,21 @@
+
+
+<form bindsubmit="formSubmit">
+    <view class='fz14 ml10 mb10' wx:if='{{code}}'>扫描结果：快递单号 {{code}}</view>
+
+    <view class="main fz14 borderte0 borderbe0 bgf pr10" wx:if='{{code}}'>
+        <view class='flex alic ml15 borderbe0 lh40 pt5 pb5' wx:for="{{list}}" wx:key='i'>
+          <text class='txt flex1'>姓名：{{item.sender}}</text>
+          <checkbox-group bindchange="checkboxChange" data-id='{{item.id}}'>
+            <label class="checkbox">
+              <checkbox value="{{item.id}}" />
+            </label>
+          </checkbox-group>
+        </view>  
+    </view>
+
+  <button formType="submit" class='btn ml10' wx:if='{{code}}' >提交</button>
+  <button bindtap='sq' class='btn ml10' wx:else>点击扫码</button>
+  
+</form>
+

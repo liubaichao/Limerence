@@ -1,0 +1,44 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/index/detail",
+    "pages/my/my",
+    "pages/my/support",
+    "pages/my/ai",
+    "pages/my/robot",
+    "pages/my/translate",
+    "pages/my/qrCode"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#898989",
+    "selectedColor": "#f4ea2a",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Others",
+        "iconPath": "pages/img/i-off.png",
+        "selectedIconPath": "pages/img/i-on.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "My",
+        "iconPath": "pages/img/my-off.png",
+        "selectedIconPath": "pages/img/my-on.png"
+      }
+    ]
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.2.2",
+      "provider": "wx069ba97219f66d99"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,8 @@
+
+.img{
+  width: 300rpx;
+  height: 300rpx;
+}
+.pay{
+  width: 300rpx;height: 300rpx;
+}

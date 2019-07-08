@@ -1,0 +1,110 @@
+/**app.wxss**/
+page{height: 100%}
+.btn{
+  width: calc(100% - 40rpx);
+  background: #005CAA;
+  font: 28rpx/80rpx "";
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  position: fixed;
+  bottom:40rpx;
+}
+.tc{text-align: center}
+.tr{text-align: right}
+.vm{vertical-align: middle;}
+.fl{float: left;}
+.fr{float: right;}
+.fz24{font-size: 48rpx;}
+.fz18{font-size: 36rpx;}
+.fz16{font-size: 32rpx;}
+.fz14{font-size: 28rpx;}
+.fz12{font-size: 24rpx;}
+.fw{font-weight: 600;}
+.mr5{margin-right: 10rpx}
+.mr10{margin-right: 20rpx}
+.mr15{margin-right: 30rpx}
+.mr20{margin-right: 40rpx}
+
+.ml5{margin-left:10rpx;}
+.ml10{margin-left:20rpx;}
+.ml15{margin-left:30rpx;}
+.ml20{margin-left:40rpx;}
+
+.mt40{margin-top:80rpx;}
+.mt20{margin-top: 40rpx;}
+.mt15{margin-top: 30rpx;}
+.mt10{margin-top: 20rpx;}
+.mt5{margin-top: 10rpx;}
+
+.mb5{margin-bottom: 10rpx;}
+.mb10{margin-bottom: 20rpx;}
+.mb15{margin-bottom: 30rpx;}
+.mb20{margin-bottom: 40rpx;}
+
+.pt5{padding-top: 10rpx;}
+.pt10{padding-top: 20rpx;}
+.pt15{padding-top: 30rpx;}
+.pt20{padding-top: 40rpx;}
+
+.pb5{padding-bottom: 10rpx;}
+.pb10{padding-bottom: 20rpx;}
+.pb15{padding-bottom: 30rpx;}
+.pb20{padding-bottom: 40rpx;}
+
+.pl5{padding-left: 10rpx;}
+.pl10{padding-left: 20rpx;}
+.pl15{padding-left: 30rpx;}
+.pl20{padding-left: 40rpx;}
+
+.pr5{padding-right: 10rpx;}
+.pr10{padding-right: 20rpx;}
+.pr15{padding-right: 30rpx;}
+.pr20{padding-right: 40rpx;}
+.bgf{background: #fff;}
+
+.colorF{color: #fff;}
+.color3{color: #333;}
+.color6{color: #666;}
+
+.lh20{line-height: 40rpx;}
+.lh30{line-height: 60rpx;}
+.lh40{line-height: 80rpx;}
+
+.hide{display: none}
+.show{display: block}
+.inline{display: inline-block;}
+.indent2{text-indent: 2em;}
+.txt3{
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.flex{display: flex;}
+.flex1{flex:1;}
+.colu{flex-direction: column;}
+.justc{justify-content: center;}
+.alic{align-items: center}
+.justs{justify-content: space-between}
+.justsa{justify-content: space-around}
+
+.posAbs{position: absolute;}
+.posRel{position: relative;}
+.posFix{position: fixed;}
+.top0{top:0;}
+.bottom0{bottom:0;}
+.left0{left:0;}
+.right0{right: 0;}
+
+.borBox{box-sizing: border-box;}
+.borderte0{border-top:1px solid #e0e0e0; }
+.borderbe0{border-bottom:1px solid #e0e0e0; }
+.borRad{border-radius: 10rpx;}
+.over{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.overH{overflow: hidden}
+.clear{zoom:1;}
+.clear:after{content: "\0020";display: block;height: 0;clear: both;}
+.mask{width: 100%;height: 100%;background: rgba(120, 220, 220, 0.5);position: fixed;z-index: 5;top: 0;left: 0;}

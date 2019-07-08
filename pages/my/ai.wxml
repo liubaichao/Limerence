@@ -1,0 +1,20 @@
+
+<scroll-view class="fz14 lh30 color3" scroll-left='-10' scroll-x style="width: 100%;height:80rpx;white-space:nowrap;" scroll-into-view='id{{currentIndex}}'>
+  <view id='id0' data-i='0' bindtap='go' class="{{currentIndex==0? 'cue ml10 lh30 fz16 acitve borRad pl10 pr10 mb20 inline':'cue ml10 lh30 fz16 borRad pl10 pr10 mb20 inline'}}">文字识别</view>
+  <view id='id1' data-i='1' bindtap='go'  class="{{currentIndex==1? 'cue ml10 lh30 fz16 acitve borRad pl10 pr10 mb20 inline':'cue ml10 lh30 fz16 borRad pl10 pr10 mb20 inline'}}">植物识别</view>
+  <view id='id2' data-i='2' bindtap='go'  class="{{currentIndex==2? 'cue ml10 lh30 fz16 acitve borRad pl10 pr10 mb20 inline':'cue ml10 lh30 fz16 borRad pl10 pr10 mb20 inline'}}">动物识别</view>
+  <view id='id3' data-i='3' bindtap='go'  class="{{currentIndex==3? 'cue ml10 lh30 fz16 acitve borRad pl10 pr10 mb20 inline':'cue ml10 lh30 fz16 borRad pl10 pr10 mb20 inline'}}">车型识别</view>
+  <view id='id4' data-i='4' bindtap='go'  class="{{currentIndex==4? 'cue ml10 lh30 fz16 acitve borRad pl10 pr10 mb20 inline':'cue ml10 lh30 fz16 borRad pl10 pr10 mb20 inline'}}">菜品识别</view>
+</scroll-view>
+
+<view class='tc'>
+  <view bindtap='select' class='selectImg inline fz14 lh30 pl10 pr10 mb20 mt10'>选择/上传</view> 
+</view>
+<view class='content borBox ml10 mr10'>
+  <view wx:for='{{result}}' wx:key="id">{{currentIndex == "0"?item.words:item.name}}</view>
+</view>
+<view class='tr'>
+  <view bindtap='copy' class='fz14 inline mr10 mt10 lh30 pl10 pr10 mb10 copy colorF'>复制文本</view>
+</view>
+<view class='ml10 fz14'>已选择图片部分截图</view>
+<canvas style="width: {{canvasW}}px; height: {{canvasH}}px;" canvas-id="firstCanvas"></canvas>

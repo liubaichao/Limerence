@@ -1,0 +1,17 @@
+<view class='tc'>
+   <image src='http://ww3.sinaimg.cn/large/9150e4e5gw1f9rw3rpczpj204c04a3yd.jpg' class='img'></image> 
+</view>
+
+<view class='fz16 lh40 tc pt20 pb20'>长按图片保存本地，打开微信或支付宝扫码即可</view>
+
+<view class='flex justc alic tc fz14'>
+  <view class='mr20'>
+    <view class='mb10'>微信赞赏</view>
+    <image src='../img/wx.png' bindlongtap="save" data-src='../img/wx.png' class='pay'></image> 
+  </view>
+  <view>
+    <view class='mb10'>支付宝赞赏</view>
+    <image src='../img/ant.jpg' bindlongtap="save" data-src='../img/ant.jpg' class='pay'></image> 
+  </view>
+</view>
+ 

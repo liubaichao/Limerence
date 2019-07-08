@@ -1,0 +1,4 @@
+.cue{
+  border:1px solid #1AAD19;width: max-content;color:#1AAD19;
+}
+.img{width: 100%;}
