@@ -1,4 +1,4 @@
-const UTIL = require('../../utils/util.js')
+const UTIL = require('../../../utils/util.js')
 
 Page({
 
@@ -6,22 +6,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:{},
-    isHide:true
+    isHide:true,
+    detail:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (options.data){          
-      options.data = JSON.parse(options.data)    
-      this.setData({ list: options.data})
-    }else{
-      this.setData({ list: options })
-    }   
+    if (options){          
+      let newsId = options.newsId
+      this.getDetail(newsId)
+    } 
   },
-
+  getDetail(newsId){
+    wx.request({
+      url: 'https://www.mxnzp.com/api/news/details?newsId='+newsId,
+      method: 'GET',
+      header:{
+        'app_id':'h3rmpujrsqireuqn',
+        'app_secret':'akMzRUF2Qnp2QWRZSk9qQjJnek5KZz09'
+      },
+      success: (res) => { 
+        if(res.data.code){
+          this.setData({
+            detail:res.data.data
+          }); 
+        }else{
+          this.setData({
+            isHide:false
+          }); 
+        }       
+      },
+      fail:(err)=>{
+        console.log(err)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -39,8 +60,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let a = JSON.stringify(this.data.list)
-    console.log(a, JSON.parse(JSON.stringify(this.data.list)).imgsrc)
+
   },
 
   /**

@@ -1,0 +1,21 @@
+ <!-- <video wx:if='{{list.videosrc}}' src='{{list.videosrc}}' binderror='no' objectFit='cover' autoplay='{{true}}' class='video'></video>  -->
+<view wx:if='{{ !detail.cover || (detail.newsId == "此类型无详情id")}}' class='fz14 ml10 mr10 lh20'>sorry！由于我是个人开发者，关于视频我没有开发权限，所以我不得不删除了视频，敬请谅解</view> 
+<image wx:if='{{detail.cover && (detail.newsId != "此类型无详情id")}}' lazy-load='{{true}}' src='{{detail.cover}}' binderror='no' class='img' mode="widthFix"></image>   
+
+<view hidden='{{isHide}}' class='tc'>
+  <image src='https://s1.ax1x.com/2020/05/02/JxK62V.gif' class='cat'></image>
+  <view>哎呀！您访问的内容被喵星人偷走了</view>
+</view>
+
+<view class='pl10 pr10' wx:if='{{detail.cover}}'>
+  <view class='fz18 indent2 pt10 pb5'>{{detail.title}}</view>
+  <view class='flex alic justs fz12 color6 mt5 pb5'>
+    <view class='flex alic'>
+      <image class='head mr5' lazy-load='{{true}}' src='https://s1.ax1x.com/2020/05/02/JvYjBV.jpg'></image>
+      <text>{{detail.source}}</text>
+    </view>
+    <text>{{detail.ptime}}</text>
+  </view>
+  <image wx:for='{{detail.images}}' lazy-load='{{true}}' wx:key='i' src='{{item.imgSrc}}' class='img' mode="widthFix"></image> 
+  <rich-text class='indent2 fz14' nodes="{{detail.content}}"></rich-text>
+</view> 

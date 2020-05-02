@@ -1,0 +1,10 @@
+/**index.wxss**/
+.active{
+  border-bottom: 1px solid #000;color: #000;
+}
+.list{
+  box-shadow: 0rpx 4rpx 20rpx #bbb;
+}
+.img{width: 100%;height: 400rpx;}
+.title{width: 40rpx;height: 40rpx;border-radius: 50%;}
+swiper-item{overflow-y:auto;-webkit-overflow-scrolling: touch}

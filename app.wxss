@@ -10,9 +10,11 @@ page{height: 100%}
   position: fixed;
   bottom:40rpx;
 }
+.tl{text-align: left}
 .tc{text-align: center}
 .tr{text-align: right}
 .vm{vertical-align: middle;}
+.vs{vertical-align: sub;}
 .fl{float: left;}
 .fr{float: right;}
 .fz24{font-size: 48rpx;}
@@ -20,7 +22,7 @@ page{height: 100%}
 .fz16{font-size: 32rpx;}
 .fz14{font-size: 28rpx;}
 .fz12{font-size: 24rpx;}
-.fw{font-weight: 600;}
+.fw{font-weight: 600;font-weight: bold;}
 .mr5{margin-right: 10rpx}
 .mr10{margin-right: 20rpx}
 .mr15{margin-right: 30rpx}
@@ -66,6 +68,7 @@ page{height: 100%}
 .colorF{color: #fff;}
 .color3{color: #333;}
 .color6{color: #666;}
+.color9{color: #999;}
 
 .lh20{line-height: 40rpx;}
 .lh30{line-height: 60rpx;}
@@ -82,14 +85,19 @@ page{height: 100%}
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+.txtno{white-space: nowrap;}/*不换行*/
+.txtsa{text-align: justify;text-align-last: justify;}/*文字分散对齐*/
 
 .flex{display: flex;}
 .flex1{flex:1;}
 .colu{flex-direction: column;}
 .justc{justify-content: center;}
+.justs{justify-content: space-between}/*两端对齐*/
+.justsa{justify-content: space-around}/*分散对齐*/
+.juste{justify-content: flex-end;}
 .alic{align-items: center}
-.justs{justify-content: space-between}
-.justsa{justify-content: space-around}
+.wrap{flex-wrap:wrap}
+.childEnd{align-self:flex-end;}
 
 .posAbs{position: absolute;}
 .posRel{position: relative;}
@@ -103,6 +111,7 @@ page{height: 100%}
 .borderte0{border-top:1px solid #e0e0e0; }
 .borderbe0{border-bottom:1px solid #e0e0e0; }
 .borRad{border-radius: 10rpx;}
+.border0{border:0 !important}
 .over{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
 .overH{overflow: hidden}
 .clear{zoom:1;}

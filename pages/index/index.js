@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var util = require("../../utils/util.js")
 let url, page = 1;
 
 Page({
@@ -44,6 +44,7 @@ Page({
     this.getList(this.data.currentIndex, this)
   },
   go:function(e){
+    page = 1
     this.setData({
       currentIndex: e.currentTarget.dataset.i
     })
@@ -53,10 +54,11 @@ Page({
   },
   getIndex:function(e){
     if (e.detail.source){
+      page = 1
       this.setData({
         currentIndex: e.detail.current + ''
       })
-      if (this.data['type' + e.detail.current] == "") { //滑动切换如果等于空就加载数据
+      if (this.data['type' + e.detail.current] == "") { //滑动切换如果等于空就加载数据 
         this.getList(e.detail.current + '', this)
       }
     }
@@ -64,74 +66,80 @@ Page({
   onLoad: function () {
     this.getList('0',this)
   },
-  playvideo:function(e){
-    if (e.currentTarget.dataset.name){
-      wx.navigateTo({
-        url: 'detail?videosrc=' + e.currentTarget.dataset.videosrc + '&name=' + e.currentTarget.dataset.name + '&head=' + e.currentTarget.dataset.head + '&content=' + e.currentTarget.dataset.content,
-      })
-    }else{
-      wx.navigateTo({
-        url: 'detail?videosrc=' + e.currentTarget.dataset.videosrc
-      })
-    }
+  // playvideo:function(e){
+  //   if (e.currentTarget.dataset.name){
+  //     wx.navigateTo({
+  //       url: 'detail?videosrc=' + e.currentTarget.dataset.videosrc + '&name=' + e.currentTarget.dataset.name + '&head=' + e.currentTarget.dataset.head + '&content=' + e.currentTarget.dataset.content,
+  //     })
+  //   }else{
+  //     wx.navigateTo({
+  //       url: 'detail?videosrc=' + e.currentTarget.dataset.videosrc
+  //     })
+  //   }
       
-  },
-  openImg:function(e){
-    if (e.currentTarget.dataset.name) {
-      wx.navigateTo({
-        url: 'detail?imgsrc=' + e.currentTarget.dataset.imgsrc + '&name=' + e.currentTarget.dataset.name + '&head=' + e.currentTarget.dataset.head + '&content=' + e.currentTarget.dataset.content,
-      })
-    }else{
-      wx.navigateTo({
-        url: 'detail?imgsrc=' + e.currentTarget.dataset.imgsrc 
-      })
-    }
+  // },
+  // openImg:function(e){
+  //   if (e.currentTarget.dataset.name) {
+  //     wx.navigateTo({
+  //       url: 'detail?imgsrc=' + e.currentTarget.dataset.imgsrc + '&name=' + e.currentTarget.dataset.name + '&head=' + e.currentTarget.dataset.head + '&content=' + e.currentTarget.dataset.content,
+  //     })
+  //   }else{
+  //     wx.navigateTo({
+  //       url: 'detail?imgsrc=' + e.currentTarget.dataset.imgsrc 
+  //     })
+  //   }
     
-  },
+  // },
   getList:function(type ,that){ 
     wx.showNavigationBarLoading()
     console.log(type)
     let url = '';
     switch (type){
       case '0':
-        url = 'https://www.apiopen.top/satinApi?type=1&page=' + page;
+        url = '/jokes/list/random?page=' + page;
         break;
       case '1':
-        url = 'https://www.apiopen.top/femaleNameApi?page=' + page;
+        url = '/daily_word/recommend?count=20&page=' + page;
         break;
       case '2':
-        url = 'https://www.apiopen.top/meituApi?page=' + page;
+        url = '/image/girl/list?page=' + page;
         break;
       case '3':
-        url = 'https://www.apiopen.top/satinGodApi?type=1&page=' + page;
+        url = '/image/girl/list/random?page=' + page;
         break;
       case '4':
-        url = 'https://www.apiopen.top/satinApi?type=1&page=' + page;
+        url = '/jokes/list?page=' + page;
         break;
     } 
     console.log(url)
     wx.request({
-      url: url,
+      url: 'https://www.mxnzp.com/api'+url,
       method: 'GET',
+      header:{
+        'app_id':'h3rmpujrsqireuqn',
+        'app_secret':'akMzRUF2Qnp2QWRZSk9qQjJnek5KZz09'
+      },
       success: function (res) { 
         let l = that.data['type' + type]
-        for (var i = 0; i < res.data.data.length; i++) {
-          l.push(res.data.data[i])
-        }
         switch (that.data.currentIndex) {
           case '0':
+            l = [...l,...res.data.data]
             that.setData({ type0: l });
             break;
           case '1':
+            l = [...l,...res.data.data]
             that.setData({ type1: l });
             break;
           case '2':
+            l = [...l,...res.data.data.list]
             that.setData({ type2: l });
             break;
           case '3':
+            l = [...l,...res.data.data]
             that.setData({ type3: l });
             break;
           case '4':
+            l = [...l,...res.data.data.list]
             that.setData({ type4: l });
             break;
         }
@@ -151,6 +159,10 @@ Page({
       success() {
       }
     })
+  },
+  // 长按保存功能
+  saveImage (e) {
+    util.saveImage(e)
   },
   /**
   * 用户点击右上角分享

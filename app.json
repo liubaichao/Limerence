@@ -1,8 +1,10 @@
 {
   "pages": [
-    
     "pages/index/index",
-    "pages/index/detail",
+
+    "pages/news/index",
+    "pages/news/detail/detail",
+
     "pages/my/my",
     "pages/my/support",
     "pages/my/ai",
@@ -27,6 +29,12 @@
         "selectedIconPath": "pages/img/i-on.png"
       },
       {
+        "pagePath": "pages/news/index",
+        "text": "News",
+        "iconPath": "pages/img/news-off.png",
+        "selectedIconPath": "pages/img/news-on.png"
+      },
+      {
         "pagePath": "pages/my/my",
         "text": "My",
         "iconPath": "pages/img/my-off.png",
@@ -36,7 +44,7 @@
   },
   "plugins": {
     "WechatSI": {
-      "version": "0.2.2",
+      "version": "0.3.3",
       "provider": "wx069ba97219f66d99"
     }
   },

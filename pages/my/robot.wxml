@@ -2,10 +2,10 @@
   <block wx:for='{{list}}' wx:key='{{index}}'>
       <view class='flex mt10 color3' wx:if='{{item.type>=0}}' id='id{{item.id}}' style='justify-content:flex-end;align-items:flex-start;'>
         <view class='content'>{{item.text}}</view>
-        <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531978954&di=74e55b77429af864383e2bbfb412b463&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.xinxic.com%2Fimg%2F27203fa1d9c80cf1.jpg' class='head mr10 ml20'></image>
+        <image src='https://s1.ax1x.com/2020/05/02/JxKlEd.jpg' class='head mr10 ml20'></image>
       </view>
        <view class='flex mt10' wx:else style='align-items:flex-start;color:#2a2' id='id{{item.id}}'>
-        <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531384068414&di=901724af990e422b3784f36e1cb1ed1b&imgtype=jpg&src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D3855484809%2C3862465965%26fm%3D214%26gp%3D0.jpg' class='head mr10 ml20'></image>
+        <image src='https://s1.ax1x.com/2020/05/02/JxKtv8.jpg' class='head mr10 ml20'></image>
         <view class='content'>{{item.text}}</view>
       </view>
   </block>
@@ -13,7 +13,7 @@
 <form bindsubmit="send">
   <view class='flex posFix bottom0 left0 pb10' style='width:100%;'>
     <view class='inp ml10 mr5 flex1 flex' style='align-items:flex-end'>
-      <input cursor-spacing ='10' placeholder='Say...' value='{{val}}' name='text'></input>
+      <input class="flex1" cursor-spacing ='10' placeholder='Say...' value='{{val}}' name='text'></input>
     </view>
     <button formType="submit" class='fz14 tc borRad lh40 pl10 pr10 mr10 colorF' style='width:120rpx;background:#6EC470'>发送</button>
   </view>

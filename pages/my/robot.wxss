@@ -5,3 +5,4 @@
 }
 .content{max-width: 550rpx}
 .inp{border-bottom: 1px solid #6EC470}
+.inp input{height: 80rpx;}

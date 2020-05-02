@@ -1,82 +1,61 @@
 <!--index.wxml-->
 <scroll-view class="fz14 lh30 color3 posFix top0 left0 bgf" scroll-x style="width: 100%;height:80rpx;white-space:nowrap;z-index:6" scroll-into-view='id{{currentIndex}}'>
-    <view id="id0" class="{{currentIndex==0? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='0' bindtap='go'>内涵段子</view>
-    <view id="id1" class="{{currentIndex==1? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='1' bindtap='go'>热门网名</view>
-    <view id="id2" class="{{currentIndex==2? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='2' bindtap='go'>硬盘女神</view>
-    <view id="id3" class="{{currentIndex==3? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='3' bindtap='go'>神评段子</view>
-    <view id="id4" class="{{currentIndex==4? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='4' bindtap='go'>经典段子</view>
-    
-
-    <view id="id5" class="{{currentIndex==5? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='5' bindtap='go'>利好</view>
-    <view id="id6" class="{{currentIndex==6? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='6' bindtap='go'>大狗</view>
-    <view id="id7" class="{{currentIndex==7? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='7' bindtap='go'>网吧</view>
-    <view id="id8" class="{{currentIndex==8? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='8' bindtap='go'>畜生</view>
-    <view id="id9" class="{{currentIndex==9? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='9' bindtap='go'>大尺寸</view>
+  <view id="id0" class="{{currentIndex==0? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='0' bindtap='go'>内涵段子</view>
+  <view id="id1" class="{{currentIndex==1? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='1' bindtap='go'>何以与君识</view>
+  <view id="id2" class="{{currentIndex==2? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='2' bindtap='go'>硬盘女神</view>
+  <view id="id3" class="{{currentIndex==3? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='3' bindtap='go'>这谁扛得住？</view>
+  <view id="id4" class="{{currentIndex==4? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='4' bindtap='go'>经典段子</view>
 </scroll-view>
 
 <swiper current='{{currentIndex}}' style='height:100%;margin-top:80rpx;'  bindchange='getIndex'>
-    <swiper-item>
-     <scroll-view scroll-y style='height:100%' bindscrolltolower="lower" >
-        <block wx:for='{{type0}}' wx:key='i'>
-          <view class='list mb10'>
-             <image wx:if='{{item.type=="41"}}' data-videosrc='{{item.videouri}}' bindtap='playvideo' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527767631014&di=532afc3d54b5efbbd0416df747f189a2&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F03155bc589fcb70a801219c7723270f.jpg%40260w_195h_1c_1e_1o_100sh.jpg' class='img'></image> 
-            <image wx:if='{{item.type=="10"}}' lazy-load='{{true}}' data-imgsrc='{{item.cdn_img}}' src='http://img5.imgtn.bdimg.com/it/u=2761073072,2738027353&fm=27&gp=0.jpg' class='img' bindtap='openImg'></image><!--占位图-->
-            <view class='{{item.type=="29"?"indent2 fz14. pl10 pr10":"indent2 fz16 pl10 pr10 txt3"}}'>{{item.text}}</view>
-            <view class='flex alic justs fz12 color6 mt5 pb5 pl10 pr10'>
-              <view class='flex alic'>
-                <image class='title mr5' lazy-load='{{true}}' src='{{item.profile_image}}'></image>
-                <text>{{item.name}}</text>
-              </view>
-              <text>{{item.passtime}}</text>
+  <swiper-item>
+    <scroll-view scroll-y style='height:100%' bindscrolltolower="lower" >
+      <block wx:for='{{type0}}' wx:key='i'>
+        <view class='list mb10 pl10 pr10 pt10 pb10 borBox'>
+          <rich-text class='{{item.type=="text"?"indent2 fz14":"indent2 fz14"}}' nodes="{{item.content}}"></rich-text>
+          <view class='flex alic justs fz12 color6 mt5 pb5'>
+            <view class='flex alic'>
+              <image class='title mr5' lazy-load='{{true}}' src='https://s1.ax1x.com/2020/05/02/JvYjBV.jpg'></image>
+              <text>右上角分享</text>
             </view>
+            <text>{{item.updateTime}}</text>
           </view>
-        </block>     
-      </scroll-view>  
-    </swiper-item>
-    <swiper-item>
-      <scroll-view scroll-y style='height:100%' bindscrolltolower="lower" >
-       <text class="pl10 lh40 show" wx:for='{{type1}}' wx:key='{{index}}' selectable='{{true}}' bindlongpress='copy' data-text='{{item.femalename}}'>{{item.femalename}}</text>
-      </scroll-view>
-    </swiper-item>
-    <swiper-item>
-      <scroll-view scroll-y style='height:100%' bindscrolltolower="lower" >
-        <image wx:for='{{type2}}' lazy-load='{{true}}' wx:key='{{index}}' src='{{item.url}}' style='width:100%' mode="widthFix"></image>
-      </scroll-view>
-    </swiper-item>
-    <swiper-item>
-      <scroll-view scroll-y style='height:100%' bindscrolltolower="lower" >
-       <block wx:for='{{type3}}' wx:key='i'>
-          <view class='list mb10'>
-             <image wx:if='{{item.type=="video"}}' data-videosrc='{{item.video}}' data-head='{{item.top_commentsHeader}}' data-name='{{item.top_commentsName}}' data-content='{{item.top_commentsContent}}' bindtap='playvideo' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527767631014&di=532afc3d54b5efbbd0416df747f189a2&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F03155bc589fcb70a801219c7723270f.jpg%40260w_195h_1c_1e_1o_100sh.jpg' class='img'></image> 
-            <image wx:if='{{item.type=="image"||item.type=="gif"}}' lazy-load='{{true}}' data-imgsrc='{{item.gif?"item.gif":"item.image"}}' data-head='{{item.top_commentsHeader}}' data-name='{{item.top_commentsName}}' data-content='{{item.top_commentsContent}}' src='http://img2.imgtn.bdimg.com/it/u=2249871484,576041728&fm=27&gp=0.jpg' class='img' bindtap='openImg'></image><!--占位图-->
-            <view class='{{item.type=="text"?"indent2 fz14. pl10 pr10":"indent2 fz16 pl10 pr10 txt3"}}'>{{item.text}}</view>
-            <view class='flex alic justs fz12 color6 mt5 pb5 pl10 pr10'>
-              <view class='flex alic'>
-                <image class='title mr5' lazy-load='{{true}}' src='{{item.header}}'></image>
-                <text>{{item.username}}</text>
-              </view>
-              <text>{{item.passtime}}</text>
-            </view>
-          </view>
-        </block> 
-      </scroll-view>      
-    </swiper-item>
-    <swiper-item>
-     <scroll-view scroll-y style='height:100%' bindscrolltolower="lower" >
+        </view>
+      </block>     
+    </scroll-view>  
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y style='height:100%' bindscrolltolower="lower" >
+      <text class="pl10 pr10 pt10 pb10 borBox mb10 fz14 show color3 clear" wx:for='{{type1}}' wx:key='i' selectable='{{true}}' bindlongpress='copy' data-text='{{item.content}}'>
+        {{item.content}}
+        <text class="fr color9"> -- {{item.author?item.author:'佚名'}}</text>
+      </text>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y style='height:100%' bindscrolltolower="lower" >
+      <image bindlongpress="saveImage" wx:for='{{type2}}' wx:key='i' lazy-load='{{true}}' data-url="{{item.imageUrl}}" src='{{item.imageUrl}}' style='width:100%' mode="widthFix"></image>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y style='height:100%' bindscrolltolower="lower" >
+      <image bindlongpress="saveImage" wx:for='{{type3}}' wx:key='i' lazy-load='{{true}}' data-url="{{item.imageUrl}}" src='{{item.imageUrl}}' style='width:100%' mode="widthFix"></image>
+    </scroll-view>      
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y style='height:100%' bindscrolltolower="lower" >
       <block wx:for='{{type4}}' wx:key='i'>
-          <view class='list mb10'>
-             <image wx:if='{{item.type=="41"}}' data-videosrc='{{item.videouri}}' bindtap='playvideo' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527767631014&di=532afc3d54b5efbbd0416df747f189a2&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F03155bc589fcb70a801219c7723270f.jpg%40260w_195h_1c_1e_1o_100sh.jpg' class='img'></image> 
-            <image wx:if='{{item.type=="10"}}' lazy-load='{{true}}' data-imgsrc='{{item.cdn_img}}' src='http://img.zcool.cn/community/01ed9b58d62ff0a801219c773bb10f.jpg@1280w_1l_2o_100sh.jpg' class='img' bindtap='openImg'></image><!--占位图-->
-            <view class='{{item.type=="29"?"indent2 fz14. pl10 pr10":"indent2 fz16 pl10 pr10 txt3"}}'>{{item.text}}</view>
-            <view class='flex alic justs fz12 color6 mt5 pb5 pl10 pr10'>
-              <view class='flex alic'>
-                <image lazy-load='{{true}}' class='title mr5' src='{{item.profile_image}}'></image>
-                <text>{{item.name}}</text>
-              </view>
-              <text>{{item.passtime}}</text>
+        <view class='list mb10 pl10 pr10 pt10 pb10 borBox'>
+          <rich-text class='{{item.type=="text"?"indent2 fz14":"indent2 fz14"}}' nodes="{{item.content}}"></rich-text>
+          <view class='flex alic justs fz12 color6 mt5 pb5'>
+            <view class='flex alic'>
+              <image class='title mr5' lazy-load='{{true}}' src='https://s1.ax1x.com/2020/05/02/JvYjBV.jpg'></image>
+              <text>右上角分享</text>
             </view>
+            <text>{{item.updateTime}}</text>
           </view>
-        </block>   
-       </scroll-view>       
-    </swiper-item>
+        </view>
+      </block>     
+      </scroll-view>       
+  </swiper-item>
 </swiper>
