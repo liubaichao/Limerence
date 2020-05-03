@@ -18,7 +18,7 @@ Page({
   onLoad: function (options) {
     let that = this;
    wx.request({
-     url: 'https://aip.baidubce.com/oauth/2.0/token?',
+     url: 'https://aip.baidubce.com/oauth/2.0/token',
      method: 'GET',
      data:{
        'grant_type': 'client_credentials',
@@ -52,8 +52,9 @@ Page({
         wx.getImageInfo({
           src: path ,
           success: function (res) {
-            let width =res.width
-            let height = res.height
+            let width = wx.getSystemInfoSync().windowWidth//res.width/2
+            let height = res.width > res.height? res.height/10:res.height/2
+            console.log(res)
             that.setData({
               canvasW: width,
               canvasH: height
@@ -72,7 +73,7 @@ Page({
                 height: height,
                 success(res) {
                   // 3. png编码
-                  let pngData = upng.encode([res.data.buffer], res.width, res.height)
+                  let pngData = upng.encode([res.data.buffer], width, height)
                   // 4. base64编码
                   let base64 = wx.arrayBufferToBase64(pngData)    
                   let key = ''     
