@@ -1,9 +1,9 @@
 <!--index.wxml-->
 <scroll-view class="fz14 lh30 color3 posFix top0 left0 bgf" scroll-x style="width: 100%;height:80rpx;white-space:nowrap;z-index:6" scroll-into-view='id{{currentIndex}}'>
-  <view id="id2" class="{{currentIndex==2? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='2' bindtap='go'>硬盘女神</view>
-  <view id="id3" class="{{currentIndex==3? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='3' bindtap='go'>这谁扛得住？</view>
   <view id="id0" class="{{currentIndex==0? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='0' bindtap='go'>内涵段子</view>
   <view id="id1" class="{{currentIndex==1? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='1' bindtap='go'>何以与君识</view>
+  <view id="id2" class="{{currentIndex==2? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='2' bindtap='go'>硬盘女神</view>
+  <view id="id3" class="{{currentIndex==3? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='3' bindtap='go'>这谁扛得住？</view>
   <view id="id4" class="{{currentIndex==4? 'pl10 pr10 inline active fz16':'pl10 pr10 inline'}}" data-i='4' bindtap='go'>经典段子</view>
 </scroll-view>
 

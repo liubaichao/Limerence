@@ -6,7 +6,7 @@ let url, page = 1;
 
 Page({
   data: {
-    currentIndex:'2',
+    currentIndex:'0',
     type0: [],
     type1: [],
     type2: [],
@@ -64,7 +64,7 @@ Page({
     }
   },
   onLoad: function () {
-    this.getList('2',this)
+    this.getList('0',this)
   },
   // playvideo:function(e){
   //   if (e.currentTarget.dataset.name){
